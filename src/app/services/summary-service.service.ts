@@ -10,6 +10,6 @@ export class SummaryServiceService {
   constructor(private http:HttpClient) { }
 
   getsummarydata(){
-    return this.http.get<SummaryModel>('http://localhost:8080/summary/all');
+    return this.http.get<SummaryModel>('https://world-summary-app.herokuapp.com//summary/all');
   }
 }

@@ -11,6 +11,6 @@ export class IndiaServiceService {
   constructor(private http:HttpClient) { }
 
   getIndiaData(){
-    return this.http.get<IndiaDataWrapper>('http://localhost:9001/country/data');
+    return this.http.get<IndiaDataWrapper>('https://india-summary-service.herokuapp.com/country/data');
   }
 }
