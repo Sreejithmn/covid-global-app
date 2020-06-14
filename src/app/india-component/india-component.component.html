@@ -1,0 +1,9 @@
+<div *ngIf="candisplay; else dontdisplay">
+<app-india-summary [indiasdata]="countrydata"></app-india-summary>
+<app-india-table></app-india-table>
+</div>
+
+<ng-template #dontdisplay>
+
+        Loading...
+</ng-template>

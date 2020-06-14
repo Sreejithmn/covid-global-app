@@ -1,0 +1,36 @@
+
+<div class="container" style="margin-top: 20px;" *ngIf="isloadedfully; else loading">
+  <div class="row" style="text-align: center;">
+    <div class="col-md-6">
+      <div class="jumbotron">
+        <span style="font-size: 50px;"><b>{{summary.global.TotalConfirmed| number:''}}</b></span> Confirmed
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="jumbotron">
+        <span style="font-size: 50px;"><b>{{summary.global.TotalDeaths| number:''}}</b></span> Deceased
+      </div>
+    </div>
+  </div>
+  <div class="row" style="text-align: center;"> 
+    <div class="col-md-6">
+      <div class="jumbotron">
+        <span style="font-size: 50px;"><b>{{summary.global.TotalRecovered| number:''}}</b></span> Recovered
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="jumbotron">
+        <span style="font-size: 50px;"><b>{{summary.global.TotalConfirmed-(summary.global.TotalRecovered+summary.global.TotalDeaths)| number:''}}</b></span>Active
+      </div>
+    </div>
+  </div>
+ 
+  <app-world-table [summarydata]="summary"></app-world-table>
+   
+  </div>
+
+  <ng-template #loading>
+    <p>
+      Loading....
+    </p>
+  </ng-template>

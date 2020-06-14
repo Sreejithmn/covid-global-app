@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>World Report</h2>
+    <p>The coronavirus COVID-19 is affecting {{summarydata.countries.length}} countries and territories around the world. Here is the report on cases, deaths, recovered and active cases for each country</p>
+    <table class="table">
+      <thead>
+        <tr class="table-active">
+          <th>Country</th>
+          <th>Total Cases</th>
+          <th>New Cases</th>
+          <th>Total Deaths</th>
+          <th>New Deaths</th>
+          <th>Total Recovered</th>
+          <th>New Recovered</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+         
+        <tr class="table-light" *ngFor="let country of summarydata.countries"> 
+          <td>{{country.country}}</td>
+          <td>{{country.TotalConfirmed | number:''}}</td>
+          <td>{{country.NewConfirmed | number:''}}</td>
+          <td>{{country.TotalDeaths | number:''}}</td>
+          <td>{{country.NewDeaths | number:''}}</td>
+          <td>{{country.TotalRecovered | number:''}}</td>
+          <td>{{country.NewRecovered | number:''}}</td>
+        </tr>      
+     
+      </tbody>
+    </table>
+  </div>
